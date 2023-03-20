@@ -1,0 +1,34 @@
+{
+    "name": "Player Stuff",
+    "maps": [
+        {
+            "name": "New action map",
+            "id": "b584f6c5-d2a1-4ac5-9130-9c9629c44dd4",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "46bb4ab6-9f04-4c03-b157-f5b0e79f938a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e33b35a5-5136-48e4-89f9-6ba903e1e349",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
