@@ -2,28 +2,110 @@
     "name": "Player Stuff",
     "maps": [
         {
-            "name": "New action map",
+            "name": "Player",
             "id": "b584f6c5-d2a1-4ac5-9130-9c9629c44dd4",
             "actions": [
                 {
-                    "name": "New action",
-                    "type": "Button",
+                    "name": "move",
+                    "type": "Value",
                     "id": "46bb4ab6-9f04-4c03-b157-f5b0e79f938a",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "jump",
+                    "type": "PassThrough",
+                    "id": "e6011f25-4b7c-412b-8264-eaac3ab27615",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "crouch",
+                    "type": "PassThrough",
+                    "id": "235a4950-7732-4e56-8a15-a84464451666",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "flutter",
+                    "type": "Button",
+                    "id": "d55bf222-82c8-4faa-b546-56856c3dcb61",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "MultiTap(tapDelay=1)",
                     "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
-                    "name": "",
-                    "id": "e33b35a5-5136-48e4-89f9-6ba903e1e349",
-                    "path": "",
+                    "name": "horizontal",
+                    "id": "515ef923-8481-479d-b977-54ea4d6790a8",
+                    "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Negative",
+                    "id": "a4dc3af5-3923-4cb9-8506-05cf0df03042",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Positive",
+                    "id": "a169b470-072f-4e7e-9a3a-551c0e626534",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "3dff2e1d-fb66-42f9-8a37-2de07b092784",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a6ed735e-3cab-4825-ba82-fa5b8877713f",
+                    "path": "<Keyboard>/leftCtrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6eb7f1a8-3877-401b-af89-31fb232711fa",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "flutter",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
