@@ -40,6 +40,15 @@
                     "processors": "",
                     "interactions": "MultiTap(tapDelay=1)",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "sjump",
+                    "type": "Button",
+                    "id": "0c73eda5-e43f-4008-9a66-4be597957204",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -102,10 +111,21 @@
                     "name": "",
                     "id": "6eb7f1a8-3877-401b-af89-31fb232711fa",
                     "path": "<Keyboard>/space",
-                    "interactions": "",
+                    "interactions": "Hold(duration=0.6)",
                     "processors": "",
                     "groups": "",
                     "action": "flutter",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "902c720c-7b3b-4db5-89f7-f43f7c90b95a",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "sjump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

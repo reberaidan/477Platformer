@@ -14,9 +14,11 @@ public class Player : MonoBehaviour
     private InputAction jumping;
     private InputAction crouching;
     private InputAction fluttering;
+	private InputAction shortjumping;
     private bool jump;
     private bool crouch;
     private bool flutter;
+	private bool sjump;
 
     private void Awake()
     {
@@ -29,10 +31,12 @@ public class Player : MonoBehaviour
         jumping = playerControls.Player.jump;
         crouching = playerControls.Player.crouch;
         fluttering = playerControls.Player.flutter;
+		shortjumping = playerControls.Player.sjump;
         movement.Enable();
         jumping.Enable();
         crouching.Enable();
         fluttering.Enable();
+		shortjumping.Enable();
     }
 
     private void OnDisable()
@@ -41,6 +45,7 @@ public class Player : MonoBehaviour
         jumping.Disable();
         crouching.Disable();
         fluttering.Disable();
+		shortjumping.Disable();
     }
 
 
@@ -51,6 +56,7 @@ public class Player : MonoBehaviour
         jump = false;
         crouch = false;
         flutter = false;
+		sjump = false;
     }
 
     // Update is called once per frame
@@ -59,12 +65,14 @@ public class Player : MonoBehaviour
         move = movement.ReadValue<float>();
         jump = jumping.ReadValue<float>() > 0.1f;
         crouch = crouching.ReadValue<float>() > 0.1f;
-        
+        flutter = fluttering.ReadValue<float>() > 0.1f;
+		sjump = shortjumping.ReadValue<float>() > 0.1f;
+		
     }
 
     private void FixedUpdate()
     {
-        charCon.Move(move, crouch, jump,flutter);
+        charCon.Move(move, crouch, jump, sjump, flutter);
         
     }
 }
