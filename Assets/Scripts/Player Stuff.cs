@@ -71,6 +71,15 @@ public partial class @PlayerStuff: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""slam"",
+                    ""type"": ""Button"",
+                    ""id"": ""e7c958c9-df2d-4029-be02-877ec6f84101"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -150,6 +159,17 @@ public partial class @PlayerStuff: IInputActionCollection2, IDisposable
                     ""action"": ""sjump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9d964115-8ab5-4ff8-a27a-a1cf0ca18650"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""slam"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -163,6 +183,7 @@ public partial class @PlayerStuff: IInputActionCollection2, IDisposable
         m_Player_crouch = m_Player.FindAction("crouch", throwIfNotFound: true);
         m_Player_flutter = m_Player.FindAction("flutter", throwIfNotFound: true);
         m_Player_sjump = m_Player.FindAction("sjump", throwIfNotFound: true);
+        m_Player_slam = m_Player.FindAction("slam", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -229,6 +250,7 @@ public partial class @PlayerStuff: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_crouch;
     private readonly InputAction m_Player_flutter;
     private readonly InputAction m_Player_sjump;
+    private readonly InputAction m_Player_slam;
     public struct PlayerActions
     {
         private @PlayerStuff m_Wrapper;
@@ -238,6 +260,7 @@ public partial class @PlayerStuff: IInputActionCollection2, IDisposable
         public InputAction @crouch => m_Wrapper.m_Player_crouch;
         public InputAction @flutter => m_Wrapper.m_Player_flutter;
         public InputAction @sjump => m_Wrapper.m_Player_sjump;
+        public InputAction @slam => m_Wrapper.m_Player_slam;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -262,6 +285,9 @@ public partial class @PlayerStuff: IInputActionCollection2, IDisposable
             @sjump.started += instance.OnSjump;
             @sjump.performed += instance.OnSjump;
             @sjump.canceled += instance.OnSjump;
+            @slam.started += instance.OnSlam;
+            @slam.performed += instance.OnSlam;
+            @slam.canceled += instance.OnSlam;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -281,6 +307,9 @@ public partial class @PlayerStuff: IInputActionCollection2, IDisposable
             @sjump.started -= instance.OnSjump;
             @sjump.performed -= instance.OnSjump;
             @sjump.canceled -= instance.OnSjump;
+            @slam.started -= instance.OnSlam;
+            @slam.performed -= instance.OnSlam;
+            @slam.canceled -= instance.OnSlam;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -305,5 +334,6 @@ public partial class @PlayerStuff: IInputActionCollection2, IDisposable
         void OnCrouch(InputAction.CallbackContext context);
         void OnFlutter(InputAction.CallbackContext context);
         void OnSjump(InputAction.CallbackContext context);
+        void OnSlam(InputAction.CallbackContext context);
     }
 }
