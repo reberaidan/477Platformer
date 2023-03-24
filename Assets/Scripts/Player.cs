@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
         move = movement.ReadValue<float>();
         jump = jumping.ReadValue<float>() > 0.1f;
         crouch = crouching.ReadValue<float>() > 0.1f;
-        flutter = fluttering.ReadValue<float>() > 0.1f;
+        flutter = fluttering.ReadValue<float>() == 1f;
 		sjump = shortjumping.ReadValue<float>() > 0.1f;
 		slam = slamming.ReadValue<float>() > 0.1f;
 		
@@ -79,7 +79,8 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        charCon.Move(move, crouch, jump, sjump, flutter, slam);
+        charCon.Move(move, crouch, sjump, jump, flutter, slam);
+        print(flutter);
         
     }
 }

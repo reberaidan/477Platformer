@@ -60,7 +60,7 @@ public partial class @PlayerStuff: IInputActionCollection2, IDisposable
                     ""id"": ""d55bf222-82c8-4faa-b546-56856c3dcb61"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": ""MultiTap(tapDelay=1)"",
+                    ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
@@ -141,8 +141,8 @@ public partial class @PlayerStuff: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""6eb7f1a8-3877-401b-af89-31fb232711fa"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": ""Hold(duration=0.6)"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": ""Press(pressPoint=1)"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""flutter"",
@@ -152,7 +152,7 @@ public partial class @PlayerStuff: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""902c720c-7b3b-4db5-89f7-f43f7c90b95a"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": ""Tap"",
                     ""processors"": """",
                     ""groups"": """",

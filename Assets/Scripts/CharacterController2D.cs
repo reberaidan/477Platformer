@@ -39,6 +39,7 @@ public class CharacterController2D : MonoBehaviour
 
     public bool IsPlayerOnGround()
     {
+        
         return m_Grounded;
     }
 
@@ -89,9 +90,9 @@ public class CharacterController2D : MonoBehaviour
         //only control the player if grounded or airControl is turned on
         if (m_Grounded || m_AirControl)
         {
-
+            m_AirControl = true;
             // If crouching
-            if (crouch)
+            if (crouch || flutter)
             {
                 if (!m_wasCrouching)
                 {
@@ -150,11 +151,13 @@ public class CharacterController2D : MonoBehaviour
 		}
         if (!m_Grounded && flutter)
         {
-            m_Rigidbody2D.AddForce(new Vector2(move, 2f));
+            m_Rigidbody2D.AddForce(new Vector2(move, 7f));
         }
 		if (!m_Grounded && slam)
 		{
+            m_Rigidbody2D.AddForce(new Vector2(-m_Rigidbody2D.velocity.x*4,0));
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_SlamForce));
+            m_AirControl = false;
 		}
     }
 
