@@ -151,7 +151,7 @@ public class CharacterController2D : MonoBehaviour
 		}
         if (!m_Grounded && flutter)
         {
-            m_Rigidbody2D.AddForce(new Vector2(move, 7f));
+            m_Rigidbody2D.AddForce(new Vector2(move, 6f));
         }
 		if (!m_Grounded && slam)
 		{

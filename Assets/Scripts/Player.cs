@@ -81,6 +81,6 @@ public class Player : MonoBehaviour
     {
         charCon.Move(move, crouch, sjump, jump, flutter, slam);
         print(flutter);
-        
     }
+
 }
