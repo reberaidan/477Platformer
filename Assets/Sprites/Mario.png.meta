@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 66faccbf2dba0f84199a8907b6d2f58f
+guid: e87623fff9578b24cb0f0b33c9a20409
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -36,9 +36,9 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -105,64 +105,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cloudsprites_0
+      name: Head
       rect:
         serializedVersion: 2
-        x: 1191
-        y: 1449
-        width: 275
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 235
+        y: 1572
+        width: 367
+        height: 362
+      alignment: 9
+      pivot: {x: 0.5184045, y: 0.06463117}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d80394dd9d6c1a4fae47a8190dd0c99
-      internalID: 142090018
+      spriteID: 9642e5bb1b3baf147ad37c56b1e91ed2
+      internalID: -352265076
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cloudsprites_1
+      name: Back Arm
       rect:
         serializedVersion: 2
-        x: 378
-        y: 1067
-        width: 553
-        height: 162
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 989
+        y: 1641
+        width: 295
+        height: 172
+      alignment: 9
+      pivot: {x: 0.14128956, y: 0.3821908}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 980a13d7544736846a458f4b37c591e1
-      internalID: -1627714131
+      spriteID: 924d7800cbb626f4289cbfd3a63446d2
+      internalID: 1926847169
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cloudsprites_2
+      name: Front Arm
       rect:
         serializedVersion: 2
-        x: 1298
-        y: 1074
-        width: 544
-        height: 155
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1535
+        y: 1615
+        width: 329
+        height: 183
+      alignment: 9
+      pivot: {x: 0.89007473, y: 0.58612293}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42ac7e236c9b98d4ea738f1ea10016c0
-      internalID: 784426350
+      spriteID: 40ef4bcba471adf478dbfd2318b0cc11
+      internalID: 240354412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Torso
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 1173
+        width: 226
+        height: 269
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d43e26794a2d915489ed4e7da76ae9a6
+      internalID: 918916167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back Leg
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 578
+        width: 368
+        height: 219
+      alignment: 9
+      pivot: {x: 0.885444, y: 0.2635434}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5102d98c88f65eb48954b3e6f6757560
+      internalID: 772193110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Front Leg
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 746
+        width: 376
+        height: 282
+      alignment: 9
+      pivot: {x: 0.17066112, y: 0.8752476}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 893a62f5450f5c34db96da979e917606
+      internalID: 783885092
       vertices: []
       indices: 
       edges: []
@@ -178,9 +241,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      cloudsprites_0: 142090018
-      cloudsprites_1: -1627714131
-      cloudsprites_2: 784426350
+      Back Arm: 1926847169
+      Back Leg: 772193110
+      Front Arm: 240354412
+      Front Leg: 783885092
+      Head: -352265076
+      Torso: 918916167
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

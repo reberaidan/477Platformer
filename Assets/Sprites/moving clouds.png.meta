@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 66faccbf2dba0f84199a8907b6d2f58f
+guid: ed09d425177f6d747b55ac1732d9e9ab
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,64 +105,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cloudsprites_0
+      name: moving clouds_1
       rect:
         serializedVersion: 2
-        x: 1191
-        y: 1449
-        width: 275
-        height: 59
+        x: 0
+        y: 614
+        width: 2048
+        height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d80394dd9d6c1a4fae47a8190dd0c99
-      internalID: 142090018
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cloudsprites_1
-      rect:
-        serializedVersion: 2
-        x: 378
-        y: 1067
-        width: 553
-        height: 162
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 980a13d7544736846a458f4b37c591e1
-      internalID: -1627714131
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cloudsprites_2
-      rect:
-        serializedVersion: 2
-        x: 1298
-        y: 1074
-        width: 544
-        height: 155
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 42ac7e236c9b98d4ea738f1ea10016c0
-      internalID: 784426350
+      spriteID: 02957dd37452f6c4bb2ae3193bb455a2
+      internalID: -412159437
       vertices: []
       indices: 
       edges: []
@@ -178,9 +136,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      cloudsprites_0: 142090018
-      cloudsprites_1: -1627714131
-      cloudsprites_2: 784426350
+      moving clouds_0: -1168082172
+      moving clouds_1: -412159437
+      moving clouds_2: -1466877664
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
