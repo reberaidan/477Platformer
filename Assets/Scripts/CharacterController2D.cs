@@ -30,7 +30,7 @@ public class CharacterController2D : MonoBehaviour
     public class BoolEvent : UnityEvent<bool> { }
 
     public BoolEvent OnCrouchEvent;
-    private bool m_wasCrouching = false;
+    public bool m_wasCrouching = false;
 
     public void SetMovementSmoothing(float value)
     {
@@ -77,13 +77,33 @@ public class CharacterController2D : MonoBehaviour
     public void Move(float move, bool crouch, bool sjump, bool jump, bool flutter, bool slam)
     {
         
+        if (m_wasCrouching)
+        {
+            // If the character has a ceiling preventing them from standing up, keep them crouching
+            m_CeilingCheck.transform.position = new Vector3(m_CeilingCheck.transform.position.x,m_CeilingCheck.transform.position.y+1,m_CeilingCheck.transform.position.z);
+
+            if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
+            {
+                
+                crouch = true;
+                m_wasCrouching = true;
+
+            }
+            m_CeilingCheck.transform.position = new Vector3(m_CeilingCheck.transform.position.x,m_CeilingCheck.transform.position.y-1,m_CeilingCheck.transform.position.z);
+
+        }
         // If crouching, check to see if the character can stand up
+
         if (!crouch)
         {
             // If the character has a ceiling preventing them from standing up, keep them crouching
+
             if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
             {
+                
                 crouch = true;
+                m_wasCrouching = true;
+
             }
         }
 
@@ -91,15 +111,22 @@ public class CharacterController2D : MonoBehaviour
         if (m_Grounded || m_AirControl)
         {
             m_AirControl = true;
+            if(flutter){
+                move *= m_CrouchSpeed;
+            }
             // If crouching
-            if (crouch || flutter)
+            if (crouch)
             {
                 if (!m_wasCrouching)
                 {
                     m_wasCrouching = true;
                     OnCrouchEvent.Invoke(true);
                 }
+                if(crouch || m_wasCrouching){
+                    transform.localScale = new Vector3(transform.localScale.x,0.5f,transform.localScale.z);
+                    m_Rigidbody2D.gravityScale = 2.6f;
 
+                }
                 // Reduce the speed by the crouchSpeed multiplier
                 move *= m_CrouchSpeed;
 
@@ -113,11 +140,14 @@ public class CharacterController2D : MonoBehaviour
                 if (m_CrouchDisableCollider != null)
                     m_CrouchDisableCollider.enabled = true;
 
-                if (m_wasCrouching)
-                {
+                if (m_wasCrouching) {
                     m_wasCrouching = false;
                     OnCrouchEvent.Invoke(false);
+                    transform.localScale = new Vector3(transform.localScale.x,1,transform.localScale.z);
+
+
                 }
+                m_Rigidbody2D.gravityScale = 1.3f;
             }
             // Move the character by finding the target velocity
             Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);

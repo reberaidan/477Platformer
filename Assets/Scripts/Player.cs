@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
 
     private float move;
     private CharacterController2D charCon;
+    public Animator animator;
     private InputAction movement;
     private InputAction jumping;
     private InputAction crouching;
@@ -79,8 +80,19 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        /*if(charCon.m_wasCrouching){
+            transform.localScale = new Vector3(transform.localScale.x,0.5f,transform.localScale.z);
+        }
+        else{
+            transform.localScale = new Vector3(transform.localScale.x,1,transform.localScale.z);
+        }*/
         charCon.Move(move, crouch, sjump, jump, flutter, slam);
         print(flutter);
+        jump = false;
+        sjump = false;
+        slam = false;
+        animator.SetFloat("Idle Run",Mathf.Abs(move));
+
     }
 
 }
