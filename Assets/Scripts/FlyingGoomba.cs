@@ -56,7 +56,6 @@ public class FlyingGoomba : MonoBehaviour
     void FixedUpdate()
     {
         stateStayMeths[State].Invoke();
-        print(State);
     }
     private void ChangeState(State newState)
     {
