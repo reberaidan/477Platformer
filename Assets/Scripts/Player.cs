@@ -87,7 +87,6 @@ public class Player : MonoBehaviour
             transform.localScale = new Vector3(transform.localScale.x,1,transform.localScale.z);
         }*/
         charCon.Move(move, crouch, sjump, jump, flutter, slam);
-        print(flutter);
         jump = false;
         sjump = false;
         slam = false;
