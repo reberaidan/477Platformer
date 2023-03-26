@@ -6,6 +6,7 @@ TagManager:
   tags:
   - wall
   - enemy
+  - BreakableBlock
   layers:
   - Default
   - TransparentFX
