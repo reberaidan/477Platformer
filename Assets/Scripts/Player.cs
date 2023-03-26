@@ -80,17 +80,22 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        /*if(charCon.m_wasCrouching){
-            transform.localScale = new Vector3(transform.localScale.x,0.5f,transform.localScale.z);
-        }
-        else{
-            transform.localScale = new Vector3(transform.localScale.x,1,transform.localScale.z);
-        }*/
+        
         charCon.Move(move, crouch, sjump, jump, flutter, slam);
         jump = false;
         sjump = false;
         slam = false;
-        animator.SetFloat("Idle Run",Mathf.Abs(move));
+        if (charCon.m_wasCrouching)
+        {
+            animator.SetBool("Crouched", true);
+            animator.SetFloat("Crouch Run", Mathf.Abs(move));
+            
+        }
+        else
+        {
+            animator.SetBool("Crouched", false);
+            animator.SetFloat("Idle Run",Mathf.Abs(move));
+        }
 
     }
 

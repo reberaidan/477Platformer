@@ -18,6 +18,8 @@ public class CharacterController2D : MonoBehaviour
     public bool m_Grounded;            // Whether or not the player is grounded.
     public const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
     private Rigidbody2D m_Rigidbody2D;
+    private CapsuleCollider2D m_collider;
+    private BoxCollider2D c_collider;
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
     private Vector3 m_Velocity = Vector3.zero;
 
@@ -46,7 +48,8 @@ public class CharacterController2D : MonoBehaviour
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
-
+        m_collider = GetComponent<CapsuleCollider2D>();
+        c_collider = m_CeilingCheck.GetComponent<BoxCollider2D>();
         if (OnLandEvent == null)
             OnLandEvent = new UnityEvent();
 
@@ -80,7 +83,7 @@ public class CharacterController2D : MonoBehaviour
         if (m_wasCrouching)
         {
             // If the character has a ceiling preventing them from standing up, keep them crouching
-            m_CeilingCheck.transform.position = new Vector3(m_CeilingCheck.transform.position.x,m_CeilingCheck.transform.position.y+1,m_CeilingCheck.transform.position.z);
+            m_CeilingCheck.transform.position = new Vector3(m_CeilingCheck.transform.position.x,m_CeilingCheck.transform.position.y+0.5f,m_CeilingCheck.transform.position.z);
 
             if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
             {
@@ -89,7 +92,7 @@ public class CharacterController2D : MonoBehaviour
                 m_wasCrouching = true;
 
             }
-            m_CeilingCheck.transform.position = new Vector3(m_CeilingCheck.transform.position.x,m_CeilingCheck.transform.position.y-1,m_CeilingCheck.transform.position.z);
+            m_CeilingCheck.transform.position = new Vector3(m_CeilingCheck.transform.position.x,m_CeilingCheck.transform.position.y-0.5f,m_CeilingCheck.transform.position.z);
 
         }
         // If crouching, check to see if the character can stand up
@@ -123,7 +126,9 @@ public class CharacterController2D : MonoBehaviour
                     OnCrouchEvent.Invoke(true);
                 }
                 if(crouch || m_wasCrouching){
-                    transform.localScale = new Vector3(transform.localScale.x,0.5f,transform.localScale.z);
+                    c_collider.offset = new Vector2(0, -1f);
+                    m_collider.size = new Vector2(1, 1);
+                    m_collider.offset = new Vector2(0, -0.4f);
                     m_Rigidbody2D.gravityScale = 2.6f;
 
                 }
@@ -143,10 +148,10 @@ public class CharacterController2D : MonoBehaviour
                 if (m_wasCrouching) {
                     m_wasCrouching = false;
                     OnCrouchEvent.Invoke(false);
-                    transform.localScale = new Vector3(transform.localScale.x,1,transform.localScale.z);
-
-
                 }
+                c_collider.offset = new Vector2(0, 0);
+                m_collider.offset = new Vector2(0, 0);
+                m_collider.size = new Vector2(1, 2);
                 m_Rigidbody2D.gravityScale = 1.3f;
             }
             // Move the character by finding the target velocity
