@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     private bool crouch;
     private bool flutter;
 	private bool sjump;
-	private bool slam;
+	public bool slam;
 
     private void Awake()
     {
