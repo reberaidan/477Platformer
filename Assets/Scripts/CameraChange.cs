@@ -6,7 +6,9 @@ using TMPro;
 
 public class CameraChange : MonoBehaviour, IPointerDownHandler
 {
-
+    public GameObject anim;
+    public GameObject button;
+    public GameObject title;
     public bool buttonPressed;
     public CinemachineVirtualCamera cam1;
     public CinemachineVirtualCamera cam2;
@@ -24,6 +26,9 @@ public class CameraChange : MonoBehaviour, IPointerDownHandler
         {
             cam1.Priority = 10;
             cam2.Priority = 11;
+            anim.SetActive(false);
+            button.SetActive(false);
+            title.SetActive(false);
         }
     }
 }
