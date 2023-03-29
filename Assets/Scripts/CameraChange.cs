@@ -9,6 +9,7 @@ public class CameraChange : MonoBehaviour, IPointerDownHandler
     public GameObject anim;
     public GameObject button;
     public GameObject title;
+    public GameObject pile;
     public bool buttonPressed;
     public CinemachineVirtualCamera cam1;
     public CinemachineVirtualCamera cam2;
@@ -18,7 +19,9 @@ public class CameraChange : MonoBehaviour, IPointerDownHandler
         buttonPressed = true;
     }
 
-   
+   public void Start() {
+        pile.SetActive(false);
+   }
 
     public void Update()
     {
@@ -29,6 +32,7 @@ public class CameraChange : MonoBehaviour, IPointerDownHandler
             anim.SetActive(false);
             button.SetActive(false);
             title.SetActive(false);
+            pile.SetActive(true);
         }
     }
 }
