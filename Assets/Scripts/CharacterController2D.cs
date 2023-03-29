@@ -21,6 +21,7 @@ public class CharacterController2D : MonoBehaviour
     private Rigidbody2D m_Rigidbody2D;
     private CapsuleCollider2D m_collider;
     private BoxCollider2D c_collider;
+    private AudioSource p_audio;
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
     private Vector3 m_Velocity = Vector3.zero;
 
@@ -51,6 +52,7 @@ public class CharacterController2D : MonoBehaviour
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
         m_collider = GetComponent<CapsuleCollider2D>();
         c_collider = m_CeilingCheck.GetComponent<BoxCollider2D>();
+        p_audio = GetComponent<AudioSource>();
         if (OnLandEvent == null)
             OnLandEvent = new UnityEvent();
 
@@ -114,6 +116,7 @@ public class CharacterController2D : MonoBehaviour
         //only control the player if grounded or airControl is turned on
         if (m_Grounded || m_AirControl)
         {
+            p_audio.mute = false;
             m_AirControl = true;
             if(flutter){
                 move *= m_CrouchSpeed;
@@ -195,6 +198,10 @@ public class CharacterController2D : MonoBehaviour
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_SlamForce));
             m_AirControl = false;
 		}
+        if (!m_Grounded || move == 0)
+        {
+            p_audio.mute = true;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
