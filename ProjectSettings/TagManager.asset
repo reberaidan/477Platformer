@@ -46,6 +46,15 @@ TagManager:
   - name: Background
     uniqueID: 1205391571
     locked: 0
+  - name: Parrallax 3
+    uniqueID: 3723749093
+    locked: 0
+  - name: Parrallax 2
+    uniqueID: 1418043887
+    locked: 0
+  - name: Parrallax 1
+    uniqueID: 3056781779
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
