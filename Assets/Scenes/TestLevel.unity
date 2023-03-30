@@ -38009,7 +38009,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4013572725707928855, guid: 2faed50c53260c4419ffe78d204f2afe, type: 3}
       propertyPath: k_GroundedRadius
-      value: 0.4
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 4013572725707928855, guid: 2faed50c53260c4419ffe78d204f2afe, type: 3}
       propertyPath: m_ShortJumpForce
