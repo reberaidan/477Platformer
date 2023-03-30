@@ -4,7 +4,8 @@ using UnityEngine.Events;
 public class CharacterController2D : MonoBehaviour
 {
     [SerializeField] private float m_ShortJumpForce = 100f;              // Amount of force added when the player jumps.
-	[SerializeField] private float m_JumpForce = 400f;
+	[SerializeField] private float m_EnemyJump = 100f;
+    [SerializeField] private float m_JumpForce = 400f;
 	[SerializeField] private float m_SlamForce = -100f;
     [Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;      // Amount of maxSpeed applied to crouching movement. 1 = 100%
     [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;  // How much to smooth out the movement
@@ -209,8 +210,7 @@ public class CharacterController2D : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.CompareTag("headcollider")){
-            m_Rigidbody2D.AddForce(new Vector2(0, 15f));
-            Destroy(Goomba);
+            m_Rigidbody2D.AddForce(new Vector2(0, m_EnemyJump));
         }
         if (collision.transform.CompareTag("slipperyground"))
         {

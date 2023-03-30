@@ -8,7 +8,6 @@ public class CameraChange : MonoBehaviour, IPointerDownHandler
 {
     public GameObject anim;
     public GameObject button;
-    public GameObject title;
     public GameObject pile;
     public bool buttonPressed;
     public CinemachineVirtualCamera cam1;
