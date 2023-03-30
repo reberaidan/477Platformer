@@ -25,6 +25,7 @@ public class CharacterController2D : MonoBehaviour
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
     private Vector3 m_Velocity = Vector3.zero;
 
+
     [Header("Events")]
     [Space]
 
@@ -35,6 +36,7 @@ public class CharacterController2D : MonoBehaviour
 
     public BoolEvent OnCrouchEvent;
     public bool m_wasCrouching = false;
+    private float accelerationSpeed;
 
     public void SetMovementSmoothing(float value)
     {
@@ -159,7 +161,7 @@ public class CharacterController2D : MonoBehaviour
                 m_Rigidbody2D.gravityScale = 1.3f;
             }
             // Move the character by finding the target velocity
-            Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
+            Vector3 targetVelocity = new Vector2(move * 10f*accelerationSpeed, m_Rigidbody2D.velocity.y);
             // And then smoothing it out and applying it to the character
             m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
@@ -209,6 +211,14 @@ public class CharacterController2D : MonoBehaviour
         if (collision.transform.CompareTag("headcollider")){
             m_Rigidbody2D.AddForce(new Vector2(0, 15f));
             Destroy(Goomba);
+        }
+        if (collision.transform.CompareTag("slipperyground"))
+        {
+            accelerationSpeed = 0.5f;
+        }
+        else
+        {
+            accelerationSpeed = 1f;
         }
     }
 
