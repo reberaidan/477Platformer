@@ -100,11 +100,20 @@ public class Player : MonoBehaviour
         }
 
     }
-     private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.CompareTag("thwimp move")){
+        if (collision.transform.CompareTag("thwimp move"))
+        {
             thwimp.SetActive(true);
 
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.CompareTag("enemy"))
+        {
+            animator.SetBool("isDead", true);
         }
     }
 
