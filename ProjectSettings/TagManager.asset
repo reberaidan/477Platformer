@@ -12,6 +12,7 @@ TagManager:
   - lava
   - thwimp move
   - thwimpmove
+  - slipperyground
   layers:
   - Default
   - TransparentFX
