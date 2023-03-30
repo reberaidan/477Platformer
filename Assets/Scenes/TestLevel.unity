@@ -1800,7 +1800,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 139706520}
   m_LocalRotation: {x: -0, y: -0, z: 0.0017887386, w: 0.9999984}
-  m_LocalPosition: {x: 4.57, y: 36.74, z: -10}
+  m_LocalPosition: {x: -1, y: 4.8, z: -10}
   m_LocalScale: {x: 0.87890625, y: 0.8325, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -44118,6 +44118,10 @@ PrefabInstance:
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3906592588775322609, guid: 65d791b8f2fdcd64a80f586e63fe352e, type: 3}
+      propertyPath: m_Constraints
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906592588775322609, guid: 65d791b8f2fdcd64a80f586e63fe352e, type: 3}
       propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
@@ -44127,7 +44131,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3906592588775322610, guid: 65d791b8f2fdcd64a80f586e63fe352e, type: 3}
       propertyPath: m_TagString
-      value: enemy
+      value: headcollider
       objectReference: {fileID: 0}
     - target: {fileID: 3906592588775322611, guid: 65d791b8f2fdcd64a80f586e63fe352e, type: 3}
       propertyPath: m_RootOrder
@@ -44204,11 +44208,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4013572725707928848, guid: 2faed50c53260c4419ffe78d204f2afe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.57
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4013572725707928848, guid: 2faed50c53260c4419ffe78d204f2afe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 36.74
+      value: 4.8
       objectReference: {fileID: 0}
     - target: {fileID: 4013572725707928848, guid: 2faed50c53260c4419ffe78d204f2afe, type: 3}
       propertyPath: m_LocalPosition.z

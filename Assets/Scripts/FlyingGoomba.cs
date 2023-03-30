@@ -17,6 +17,7 @@ public class FlyingGoomba : MonoBehaviour
 {
     public float move = 0.1f;
     public float distance;
+    public bool isEnemy;
 
     private Dictionary<State, Action> stateEnterMeths;
     private Dictionary<State, Action> stateExitMeths;
@@ -136,4 +137,11 @@ public class FlyingGoomba : MonoBehaviour
     #endregion
     #endregion
     // Update is called once per frame
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.CompareTag("Player") && isEnemy)
+        {
+            Destroy(gameObject);
+        }
+    }
 }
