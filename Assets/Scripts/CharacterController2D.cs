@@ -207,7 +207,7 @@ public class CharacterController2D : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.CompareTag("headcollider")){
-            m_Rigidbody2D.AddForce(new Vector2(0, m_JumpForce));
+            m_Rigidbody2D.AddForce(new Vector2(0, 15f));
             Destroy(Goomba);
         }
     }

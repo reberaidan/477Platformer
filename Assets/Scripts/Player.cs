@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 {
     public float speed;
     public PlayerStuff playerControls;
+    public GameObject thwimp;
 
     private float move;
     private CharacterController2D charCon;
@@ -26,6 +27,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         playerControls = new PlayerStuff();
+        thwimp.SetActive(false);
     }
 
     private void OnEnable()
@@ -97,6 +99,13 @@ public class Player : MonoBehaviour
             animator.SetFloat("Idle Run",Mathf.Abs(move));
         }
 
+    }
+     private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.CompareTag("thwimp move")){
+            thwimp.SetActive(true);
+
+        }
     }
 
 }

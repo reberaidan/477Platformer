@@ -46,6 +46,10 @@ public class EnemyBehavior : MonoBehaviour
         {
             move *= -1;
         }
+        else if (collision.transform.CompareTag("lava"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     

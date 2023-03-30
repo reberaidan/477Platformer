@@ -9,6 +9,9 @@ TagManager:
   - BreakableBlock
   - headcollider
   - Pile1
+  - lava
+  - thwimp move
+  - thwimpmove
   layers:
   - Default
   - TransparentFX
