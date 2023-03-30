@@ -33,7 +33,6 @@ public class CameraChange : MonoBehaviour, IPointerDownHandler
             cam2.Priority = 11;
             anim.SetActive(false);
             button.SetActive(false);
-            title.SetActive(false);
             pile.SetActive(true);
             music.SetActive(true);
         }
